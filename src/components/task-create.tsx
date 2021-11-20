@@ -23,11 +23,11 @@ export default function TaskCreate() {
   };
 
   return (
-    <div className='md:col-span-2 justify-center items-center grid grid-flow-row'>
-      <div className='md:row-span-2 justify-center '>
+    <div className='md:col-span-2 justify-center items-center grid grid-flow-row ml-2.5 mr-2.5'>
+      <div className='md:row-span-2 text-center'>
         <h1 className='text-5xl font-bold'>Task Creater</h1>
       </div>
-      <form className='md:row-span-3' onSubmit={handleSubmit}>
+      <form className='md:row-span-3 pr-3' onSubmit={handleSubmit}>
         <input type='text' value={name} onChange={e => setName(e.target.value)} className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-2 shadow-lg' placeholder='Task Name' />
         <textarea rows={4} value={description} onChange={e => setDescription(e.target.value)} cols={50} className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-2 shadow-lg' placeholder='Description' />
         <input type='date' value={date} onChange={e => setDate(e.target.value)} className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-2 shadow-lg' placeholder='Select date' />
