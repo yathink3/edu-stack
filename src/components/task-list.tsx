@@ -2,10 +2,10 @@ import { useState } from 'react';
 import type { Task } from '../store/task';
 import { useTaskStore } from '../store/task';
 
-const getLastThreeDates = arr => {
+const getLastThreeDates = (arr: Array<Task>) => {
   return arr
     .filter(ele => new Date(ele.date) > new Date())
-    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .sort((a: Task, b: Task) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
     .slice(0, 3);
 };
 
