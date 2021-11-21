@@ -22,13 +22,9 @@ const TaskSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, { payload: taskTemp }: { payload: TasksTemp }) => {
-      const task: Task = {
-        id: new Date().valueOf(),
-        name: taskTemp.name,
-        description: taskTemp.description,
-        date: new Date(`${taskTemp.date} ${taskTemp.time}`),
-      };
-
+      const id = new Date().valueOf();
+      const date = new Date(`${taskTemp.date} ${taskTemp.time}`);
+      const task: Task = { id, name: taskTemp.name, description: taskTemp.description, date };
       state.push(task);
     },
     removeTask: (state, { payload: id }: { payload: number }) => {
