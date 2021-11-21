@@ -26,6 +26,7 @@ const TaskList = () => {
         </button>
       </div>
       <div className='justify-center'>
+        {taskList.length === 0 && <div className='flex h-28 justify-center items-center'>No Task Found</div>}
         {taskList.map(task => (
           <div key={task.id} className='bg-gray-700 rounded overflow-hidden my-3 mx-2 shadow-lg'>
             <button onClick={e => removeTask(task.id)} className='bg-gray-800 hover:bg-gray-400  text-white hover:text-black text-center py-1.5 px-2.5 rounded-full h-10 w-10 inline-flex items-center float-right m-2'>
