@@ -12,7 +12,6 @@ const store = configureStore({
 
 store.subscribe(
   debounce(() => {
-    console.log('store changed', store.getState());
     saveState(store.getState());
   }, 1000)
 );

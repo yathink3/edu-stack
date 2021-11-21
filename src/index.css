@@ -12,3 +12,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@layer components {
+  .input {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 m-2 shadow-lg;
+  }
+  .btn-blue {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded shadow-lg;
+  }
+  .chip {
+    @apply inline-block   px-3 py-1 text-sm font-semibold text-gray-700 mx-1 rounded-full shadow-lg;
+  }
+}

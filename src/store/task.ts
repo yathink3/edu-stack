@@ -21,9 +21,9 @@ const TaskSlice = createSlice({
   name: 'TaskData',
   initialState,
   reducers: {
-    addToTask: (state, { payload: taskTemp }: { payload: TasksTemp }) => {
+    addTask: (state, { payload: taskTemp }: { payload: TasksTemp }) => {
       const task: Task = {
-        id: state.length,
+        id: new Date().valueOf(),
         name: taskTemp.name,
         description: taskTemp.description,
         date: new Date(`${taskTemp.date} ${taskTemp.time}`),
@@ -32,19 +32,20 @@ const TaskSlice = createSlice({
       state.push(task);
     },
     removeTask: (state, { payload: id }: { payload: number }) => {
-      state.splice(id, 1);
+      const index = state.findIndex(task => task.id === id);
+      state.splice(index, 1);
     },
   },
 });
 
 export default TaskSlice.reducer;
 
-export const { addToTask, removeTask } = TaskSlice.actions;
+export const { addTask, removeTask } = TaskSlice.actions;
 
 export const useTaskDispatch = () => {
   const dispatch = useDispatch();
   return {
-    addToTask: (task: TasksTemp) => dispatch(addToTask(task)),
+    addTask: (task: TasksTemp) => dispatch(addTask(task)),
     removeTask: (id: number) => dispatch(removeTask(id)),
   };
 };
