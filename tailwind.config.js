@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
@@ -7,5 +8,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-neumorphism')],
 };
