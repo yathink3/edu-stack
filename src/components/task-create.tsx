@@ -12,10 +12,10 @@ const TaskCreate = () => {
     e.preventDefault();
     if (name && description && date && time) {
       addTask({ name, description, date, time });
-      setName('');
-      setDescription('');
-      setDate('');
-      setTime('');
+      // setName('');
+      // setDescription('');
+      // setDate('');
+      // setTime('');
     } else {
       alert('Please fill all the fields');
     }
@@ -32,7 +32,9 @@ const TaskCreate = () => {
         <input type='date' value={date} onChange={e => setDate(e.target.value)} className='input' placeholder='Select date' />
         <input type='time' value={time} onChange={e => setTime(e.target.value)} className='input' placeholder='Select date' />
         <span className='flex justify-center'>
-          <input type='submit' className='btn-blue' value='Create Task' />
+          <button type='submit' className='btn-blue'>
+            Create Task
+          </button>
         </span>
       </form>
     </div>
